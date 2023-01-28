@@ -1,0 +1,48 @@
+.about {
+    min-height: 440px;
+    padding-top: 80px;
+
+    &-title {
+        text-align: center;
+        font-weight: 400;
+        font-size: 24px;
+        color: #000000;
+    }
+    .coffee-bean-divider {
+        display: block;
+        margin: 0 auto;
+    }
+    &-divider {
+        margin-top: 20px;
+        position: relative;
+
+        .span-1 {
+            position: absolute;
+            content: '';
+            width: 60px;
+            height: 2px;
+            background-color: #000;
+            top: 40%;
+            left: 467px;
+        }
+
+        .span-2 {
+            position: absolute;
+            content: '';
+            width: 60px;
+            height: 2px;
+            background-color: #000;
+            top: 40%;
+            right: 467px;
+        }
+    }
+    &-descr {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 590px;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        color: #000000;
+    }
+}
