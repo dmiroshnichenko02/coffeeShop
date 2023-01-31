@@ -15,7 +15,7 @@ const CoffeeFooter = () => {
                     <ul className='footer-list'>
                         <li className='footer-list-item'><Link to="/">Coffee house</Link></li>
                         <li className='footer-list-item'><Link to="/our">Our coffee</Link></li>
-                        <li className='footer-list-item'>For your pleasure</li>
+                        <li className='footer-list-item'><Link to="/goods">For your pleasure</Link></li>
                     </ul>
                 </nav>
                 <div className="footer-divider">

@@ -1,5 +1,5 @@
 {
-    "data": [
+    "result": [
         {
             "id": 0,
             "name": "AROMISTICO Coffee 2 kg",
@@ -35,36 +35,6 @@
             "name": "AROMISTICO Coffee 1 kg",
             "country": "Brazil",
             "price": 13.99
-        },
-        {
-            "id": 6,
-            "name": "AROMISTICO Coffee 1 kg",
-            "country": "Brazil",
-            "price": 6.99
-        },
-        {
-            "id": 7,
-            "name": "AROMISTICO Coffee 1 kg",
-            "country": "Brazil",
-            "price": 6.99
-        },
-        {
-            "id": 8,
-            "name": "AROMISTICO Coffee 1 kg",
-            "country": "Brazil",
-            "price": 6.99
-        },
-        {
-            "id": 9,
-            "name": "AROMISTICO Coffee 1 kg",
-            "country": "Brazil",
-            "price": 6.99
-        },
-        {
-            "id": 10,
-            "name": "AROMISTICO Coffee 1 kg",
-            "country": "Brazil",
-            "price": 6.99
         }
     ]
 }

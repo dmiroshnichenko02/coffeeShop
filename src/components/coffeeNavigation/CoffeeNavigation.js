@@ -10,7 +10,7 @@ const CoffeeNavigation = () => {
             <ul className="nav-list">
                 <li className="nav-item"><Link to="/">Coffee house</Link></li>
                 <li className="nav-item"><Link to="/our">Our coffee</Link></li>
-                <li className="nav-item"><a href="#">For your pleasure</a></li>
+                <li className="nav-item"><Link to="/goods">For your pleasure</Link></li>
             </ul>
         </nav>
     )

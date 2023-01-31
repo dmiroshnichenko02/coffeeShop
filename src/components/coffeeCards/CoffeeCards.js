@@ -5,11 +5,11 @@ import coffeeCard from '../../resourses/img/coffee-card-aromistico.jpg';
 
 const CoffeeCards = (props) => {
     const { data } = props;
-    const items = data.map((item, i) => {
-        const { name, country, price } = item;
+    const items = data.map((item) => {
+        const { name, country, price, id } = item;
         return (
-            <Link to={`/our/${i}`}>
-                <div className="cards-item" key={i}>
+            <Link to={`/our/${id}` } key={id}>
+                <div className="cards-item">
                     <img src={coffeeCard} alt="coffee" />
                     <div className="cards-title">{name}</div>
                     <div className="cards-country">{country}</div>
