@@ -1,3 +1,6 @@
+import {Link} from 'react-router-dom';
+
+
 import './coffeeFooter.scss';
 import coffeeBean from '../../resourses/img/coffee-bean-footer.svg';
 import coffeeDivider from '../../resourses/img/coffee-divider-bean-black.svg';
@@ -10,8 +13,8 @@ const CoffeeFooter = () => {
                 <nav className="footer-navigation">
                     <img src={coffeeBean} alt="coffee-bean" className='footer-coffee-bean' />
                     <ul className='footer-list'>
-                        <li className='footer-list-item'>Coffee house</li>
-                        <li className='footer-list-item'>Our coffee</li>
+                        <li className='footer-list-item'><Link to="/">Coffee house</Link></li>
+                        <li className='footer-list-item'><Link to="/our">Our coffee</Link></li>
                         <li className='footer-list-item'>For your pleasure</li>
                     </ul>
                 </nav>

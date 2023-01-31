@@ -22,6 +22,12 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        cursor: pointer;
+        transition: all 0.8s;
+        &:hover {
+            border: 1px solid black;
+            transform: translateY(-10px);
+        }
         &-title {
             font-weight: 400;
             font-size: 14px;

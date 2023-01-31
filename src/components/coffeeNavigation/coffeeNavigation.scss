@@ -1,0 +1,28 @@
+.nav {
+    &-list {
+        display: flex;
+
+        li {
+            list-style-type: none;
+            font-weight: 400;
+            font-size: 14px;
+            color: #FFFFFF;
+            margin-right: 40px;
+
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+
+                :hover {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+.coffee-bean {
+    position: absolute;
+    top: 27px;
+    left: 226px;
+}

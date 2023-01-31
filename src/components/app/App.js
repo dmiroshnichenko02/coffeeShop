@@ -1,23 +1,25 @@
-import CoffeeHeader from "../coffeeHeader/CoffeeHeader";
-import CoffeeAbout from "../coffeeAbout/CoffeeAbout";
-import CoffeeOur from "../coffeeOur/CoffeeOur";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+
+import MainPage from "../pages/MainPage";
+import SecondPage from "../pages/SecondPage";
 import CoffeeFooter from "../coffeeFooter/CoffeeFooter";
 
-
-const App = () => {
+const App = (props) => {
   return (
-    <div>
-      <header>
-        <CoffeeHeader />
-      </header>
-      <main>
-        <CoffeeAbout />
-        <CoffeeOur />
-      </main>
-      <footer>
-        <CoffeeFooter />
-      </footer>
-    </div>
+    <Router>
+      <div>
+        <main>
+          <Routes>
+            <Route path="/" element={<MainPage/>} />
+            <Route path="/our" element={<SecondPage/>} />
+          </Routes>
+        </main>
+        <footer>
+          <CoffeeFooter />
+        </footer>
+      </div>
+    </Router>
   );
 }
 
