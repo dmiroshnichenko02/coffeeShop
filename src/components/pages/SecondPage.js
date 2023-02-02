@@ -3,35 +3,40 @@ import CoffeeAboutOur from "../coffeeAboutOur/CoffeeAboutOur";
 import CoffeeSearch from "../coffeeSearch/CoffeeSearch";
 import CoffeeCards from "../coffeeCards/CoffeeCards";
 import CoffeeService from "../service/CoffeeService";
+import CoffeeLoading from "../loading/CoffeeLoading";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 import { useState, useEffect } from "react";
 
 const SecondPage = () => {
-    const [data, setData] = useState([
-        // {name: "AROMISTICO Coffee 1 kg", country: "Brazil", price: 6.99},
-        // {name: "AROMISTICO Coffee 1 kg", country: "Brazil", price: 6.99},
-        // {name: "AROMISTICO Coffee 1 kg", country: "Kenya", price: 6.99},
-        // {name: "AROMISTICO Coffee 1 kg", country: "Brazil", price: 6.99},
-        // {name: "AROMISTICO Coffee 1 kg", country: "Brazil", price: 6.99},
-        // {name: "AROMISTICO Coffee 1 kg", country: "Columbia", price: 6.99},
-    ])
+    const [data, setData] = useState([])
     const [filter, setFilter] = useState('');
+    const [coffeeEnd, setCoffeeEnd] = useState(false);
     const [term, setTerm] = useState('');
-    const [offset, setOffset] = useState(0)
+    const [page, setPage] = useState(1)
 
-    const {getCoffeeCards} = CoffeeService();
+    const {getCoffeeCards, loading, error} = CoffeeService();
 
     useEffect (() => {
-        onRequest()
-    }, [])
+        onRequest(page)
+    }, [page])
 
-    const onRequest = () => {
-        getCoffeeCards()
+    const onRequest = (page) => {
+        getCoffeeCards(page)
             .then(data => onCardsLoad(data))
     }
-
+    console.log('rend')
     const onCardsLoad = (newData) => {
+        let ended = false
+        if (newData.length < 6) {
+            ended = true
+        }
         setData(data => [...data, ...newData]);
+        setCoffeeEnd(coffeeEnd => ended)
+    }
+
+    const onLoadMore = () => {
+        setPage(page => page + 1)
     }
 
     const onFilterSelect = (filters) => {
@@ -66,6 +71,10 @@ const SecondPage = () => {
 
     const visibleData = filterPost(searchEmp(data, term), filter)
 
+    const load = loading ? <CoffeeLoading/> : null
+    const errorMessage = error ? <ErrorMessage/> : null
+    const view = !(loading && !error) ? <CoffeeCards data={visibleData} onLoadMore={onLoadMore} coffeeEnd={coffeeEnd}/> : null
+
     return (
         <>
             <header>
@@ -74,7 +83,9 @@ const SecondPage = () => {
             <main>
                 <CoffeeAboutOur />
                 <CoffeeSearch onFilterSelect={onFilterSelect} onUppdateSearch={onUppdateSearch} />
-                <CoffeeCards data={visibleData} />
+                {load}
+                {errorMessage}
+                {view}
             </main>
         </>
     )

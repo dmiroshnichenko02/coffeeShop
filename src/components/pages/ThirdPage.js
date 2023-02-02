@@ -9,7 +9,7 @@ const ThirdPage = () => {
     const [data, setData] = useState([])
 
     const {getCoffeeCards} = CoffeeService();
-
+    console.log('render')
     useEffect (() => {
         onRequest()
     }, [])
@@ -25,9 +25,9 @@ const ThirdPage = () => {
 
     return (
         <>
-            <CoffeePleasure />
+            <CoffeePleasure/>
             <CoffeeGoods />
-            <CoffeeCards data={data}/>
+            <CoffeeCards data={data} btn={true}/>
         </>
     )
 }

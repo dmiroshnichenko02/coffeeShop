@@ -6,6 +6,7 @@ import SecondPage from "../pages/SecondPage";
 import CoffeeFooter from "../coffeeFooter/CoffeeFooter";
 import SingleCoffeePage from "../pages/SingleCofeePage";
 import ThirdPage from "../pages/ThirdPage";
+import Page404 from "../pages/404";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/our" element={<SecondPage/>} />
             <Route path="/our/:coffeeId" element={<SingleCoffeePage/>}/>
             <Route path="/goods" element={<ThirdPage/>}/>
+            <Route path="*" element={<Page404/>}/>
           </Routes>
         </main>
         <footer>

@@ -42,4 +42,11 @@
             align-self: end;
         }
     }
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: #000000;
+        }
+    }
 }

@@ -4,16 +4,19 @@ import { useParams } from 'react-router-dom';
 import coffeeDivider from '../../resourses/img/coffee-divider-bean-black.svg';
 import coffeeCardImg from '../../resourses/img/coffee-single-card.jpg';
 import CoffeeService from '../service/CoffeeService';
+import Page404 from '../pages/404';
+import CoffeeLoading from '../loading/CoffeeLoading';
+
 
 import './coffeeCard.scss';
 
 
 const CoffeeCard = () => {
 
-    const {coffeeId} = useParams()
-    const [coffee, setCoffee] = useState({});
+    const { coffeeId } = useParams()
+    const [coffee, setCoffee] = useState(null);
 
-    const { getCoffeeCard } = CoffeeService();
+    const { getCoffeeCard, loading, error } = CoffeeService();
 
     useEffect(() => {
         updateCard();
@@ -28,8 +31,16 @@ const CoffeeCard = () => {
         setCoffee(coffee)
     }
 
+    const load = loading ? <CoffeeLoading /> : null
+    const errors = error ? <Page404 /> : null
+    const content = !(loading || error || !coffee) ? <View coffee={coffee} /> : null
+
     return (
-        <View coffee={coffee}/>
+        <>
+            {load}
+            {errors}
+            {content}
+        </>
     )
 
 }
