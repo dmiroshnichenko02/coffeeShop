@@ -1,6 +1,7 @@
 .about {
     min-height: 415px;
     padding-top: 70px;
+
     &-wrapper {
         margin: 0 auto;
         width: 700px;
@@ -9,29 +10,47 @@
         grid-auto-rows: 355px;
         column-gap: 80px;
     }
+
     &-item {
         width: 100%;
     }
+
     &-our-descr {
         margin: 0;
         width: 100%;
         margin-top: 25px;
     }
+
     &-title {
         margin-top: 10px;
     }
+
     &-img {
         width: 100%;
         object-fit: contain;
         filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.25));
     }
+
     .span-3 {
-        left: inherit;
-        right: 214px;
+        right: 220px;
+        position: absolute;
+        content: '';
+        width: 60px;
+        height: 2px;
+        background-color: #000;
+        top: 40%;
     }
+
     .span-4 {
-        left: 220px;
+        right: 220px;
+        position: absolute;
+        content: '';
+        width: 60px;
+        height: 2px;
+        background-color: #000;
+        top: 40%;
     }
+
     &-low-divider {
         display: block;
         margin: 0 auto;

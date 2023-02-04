@@ -3,7 +3,7 @@ import coffeeDivider from '../../resourses/img/coffee-divider-bean-black.svg';
 
 const CoffeeAbout = () => {
     return (
-        <div className="about">
+        <div className="about" id='about'>
             <div className="container">
                 <h2 className="about-title">About Us</h2>
                 <div className="about-divider">

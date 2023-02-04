@@ -9,12 +9,15 @@
         justify-content: center;
         align-items: center;
         list-style-type: none;
+        position: relative;
 
         &-item {
             margin-right: 40px;
+
             a {
                 color: #000;
                 text-decoration: none;
+
                 &:hover {
                     color: #000;
                 }
@@ -22,11 +25,15 @@
         }
     }
 
-    &-coffee-bean {
-        position: absolute;
-        content: '';
-        left: 559px;
-        top: 33px;
+    .beans {
+        position: relative;
+
+        &::before {
+            content: url(../../resourses/img/coffee-bean-footer.svg);
+            position: absolute;
+            top: -20px;
+            left: -28px;
+        }
     }
 
     .coffee-bean-divider {

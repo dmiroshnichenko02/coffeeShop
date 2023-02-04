@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Merienda', cursive;
@@ -10,11 +16,10 @@ code {
     monospace;
 }
 
-h1,h2,h3,h4,h5,p,ul,li {
-  margin: 0;
-}
 
 .container {
   margin: 0 auto;
   width: 1140px;
 }
+
+@import url(./styles/media.scss);

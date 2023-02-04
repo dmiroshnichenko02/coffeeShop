@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 
 import MainPage from "../pages/MainPage";
 import SecondPage from "../pages/SecondPage";

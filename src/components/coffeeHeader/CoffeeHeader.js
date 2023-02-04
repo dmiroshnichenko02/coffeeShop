@@ -16,7 +16,7 @@ const CoffeeHeader = () => {
                 </div>
                 <div className="header-descr">We makes every day full of energy and taste</div>
                 <div className="header-subdescr">Want to try our beans?</div>
-                <div className="header-btn">More</div>
+                <div><a href="#about" className="header-btn">More</a></div>
             </div>
         </div>
     )

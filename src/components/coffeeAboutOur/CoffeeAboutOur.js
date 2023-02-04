@@ -12,9 +12,9 @@ const CoffeeAboutOur = () => {
                     <div className="about-item">
                         <h2 className="about-title">About our beans</h2>
                         <div className="about-divider">
-                            <span className='span-1 span-3'></span>
+                            <span className='span-3'></span>
                             <img src={coffeeDivider} alt="coffee-bean" className='coffee-bean-divider' />
-                            <span className='span-2 span-4'></span>
+                            <span className='span-4'></span>
                         </div>
                         <p className="about-descr about-our-descr">
                             Extremity sweetness difficult behaviour he of. On<br /> disposal of as landlord horrible.<br /><br />
