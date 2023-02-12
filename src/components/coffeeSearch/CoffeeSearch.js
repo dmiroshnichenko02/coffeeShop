@@ -4,13 +4,25 @@ import './coffeeSearch.scss';
 
 const CoffeeSearch = (props) => {
 
-    const [term, setTerm] = useState('')
+    const [term, setTerm] = useState('');
+    const [data, setData] = useState([
+        { name: 'All' },
+        { name: 'Brazil' },
+        { name: 'Kenya' },
+        { name: 'Columbia' }
+    ]);
 
     const onUppdateSearch = (e) => {
         const term = e.target.value
         setTerm(term)
         props.onUppdateSearch(term)
     }
+
+    const items = data.map((item, i) => {
+        return (
+            <div className="search-filter-btn" onClick={(e) => props.onFilterSelect(e.target.textContent)} key={i}>{item.name}</div>
+        )
+    })
 
     return (
         <div className="search">
@@ -23,10 +35,7 @@ const CoffeeSearch = (props) => {
                     <div className="search-item-filter">
                         <div className="search-filter">Or filter</div>
                         <div className="search-filter-wrapper">
-                            <div className="search-filter-btn" onClick={(e) => props.onFilterSelect(e.target.textContent)}>All</div>
-                            <div className="search-filter-btn" onClick={(e) => props.onFilterSelect(e.target.textContent)}>Brazil</div>
-                            <div className="search-filter-btn" onClick={(e) => props.onFilterSelect(e.target.textContent)}>Kenya</div>
-                            <div className="search-filter-btn" onClick={(e) => props.onFilterSelect(e.target.textContent)}>Columbia</div>
+                            {items}
                         </div>
                     </div>
                 </div>

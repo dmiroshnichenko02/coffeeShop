@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import coffeeDivider from '../../resourses/img/coffee-divider-bean-black.svg';
 import coffeeCardImg from '../../resourses/img/coffee-single-card.jpg';
@@ -51,6 +52,13 @@ const View = ({ coffee }) => {
     return (
         <div>
             <div className="single-card">
+                <Helmet>
+                    <meta
+                        name="description"
+                        content="Coffee Card"
+                    />
+                    <title>Coffee</title>
+                </Helmet>
                 <img src={coffeeCardImg} alt="cards" className="single-card-img" />
                 <div className="single-card-item">
                     <div className="single-card-title">About it</div>

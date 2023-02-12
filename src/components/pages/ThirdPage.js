@@ -1,16 +1,19 @@
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
+
 import CoffeePleasure from "../coffeePleasure/CoffeePleasure";
 import CoffeeGoods from "../coffeeGoods/CoffeeGoods";
 import CoffeeCards from "../coffeeCards/CoffeeCards";
 import CoffeeService from "../service/CoffeeService";
 
-import { useState, useEffect } from "react";
+
 
 const ThirdPage = () => {
     const [data, setData] = useState([])
 
-    const {getCoffeeCards} = CoffeeService();
+    const { getCoffeeCards } = CoffeeService();
     console.log('render')
-    useEffect (() => {
+    useEffect(() => {
         onRequest()
     }, [])
 
@@ -25,9 +28,16 @@ const ThirdPage = () => {
 
     return (
         <>
-            <CoffeePleasure/>
+            <Helmet>
+                <meta
+                    name="description"
+                    content="Your goods"
+                />
+                <title>Coffee pleasure</title>
+            </Helmet>
+            <CoffeePleasure />
             <CoffeeGoods />
-            <CoffeeCards data={data} btn={true}/>
+            <CoffeeCards data={data} btn={true} />
         </>
     )
 }
